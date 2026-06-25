@@ -1,0 +1,58 @@
+{
+  "name": "ecommerce-copilot-skill",
+  "description": "AI-powered catalog enrichment agent designed for cross-border e-commerce visual assets generation (model try-on, scene swapping) and listing translation/optimization.",
+  "version": "1.0.0",
+  "author": "alphaparkinc",
+  "inputs": {
+    "product_images": {
+      "type": "array",
+      "description": "List of source product image URLs (flat layout or mannequin models).",
+      "items": { "type": "string" }
+    },
+    "visual_task": {
+      "type": "string",
+      "enum": ["model_tryon", "scene_swap", "resolution_upscale", "background_removal"],
+      "description": "The AI visual enhancement task to perform."
+    },
+    "target_demographics": {
+      "type": "string",
+      "description": "Target demographics (e.g. US Gen-Z, Asian market, European professionals) to select matching models and styling."
+    },
+    "original_listing": {
+      "type": "object",
+      "description": "The original product title, bullet points, and description.",
+      "properties": {
+        "title": { "type": "string" },
+        "bullets": { "type": "array", "items": { "type": "string" } },
+        "description": { "type": "string" }
+      }
+    },
+    "target_languages": {
+      "type": "array",
+      "description": "Target languages to translate and optimize the copy for.",
+      "items": { "type": "string" }
+    }
+  },
+  "outputs": {
+    "generated_visuals": {
+      "type": "array",
+      "description": "List of generated image assets with model and background applied.",
+      "items": {
+        "source_image": { "type": "string" },
+        "modified_image": { "type": "string" },
+        "type": { "type": "string" }
+      }
+    },
+    "optimized_listings": {
+      "type": "array",
+      "description": "Optimized, localized listing copies for target markets.",
+      "items": {
+        "language": { "type": "string" },
+        "title": { "type": "string" },
+        "bullets": { "type": "array", "items": { "type": "string" } },
+        "description": { "type": "string" }
+      }
+    }
+  },
+  "prompt": "You are a professional cross-border e-commerce visuals and listing optimization coordinator. Your goal is to transform basic raw product details and flat images into high-converting visual and textual assets tailored to regional markets.\n\nGuideline Rules:\n1. Demographic Alignment: For visual_task='model_tryon' or 'scene_swap', automatically map the request to localized scene descriptions (e.g., street style for US Gen-Z, minimalist studio for European markets).\n2. Culturally Localized SEO: Translate the original listing into {{target_languages}}. Instead of literal translations, adjust phrasing to match local idiom search terms and marketplace SEO layouts (like Amazon A+ structures).\n3. Visual Enhancements Instructions: Formulate detailed prompts for image generator nodes based on {{visual_task}} and {{target_demographics}}.\n4. Avoid Hallucinations: Keep product specifications, features, and sizes identical to original inputs."
+}
