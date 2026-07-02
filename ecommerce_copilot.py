@@ -78,9 +78,9 @@ class EcommerceCopilotClient:
                 if lang.lower() == "ja":
                     results.append({
                         "language": "ja",
-                        "title": f"【新登場】{title} - プレミアムグレード",
-                        "bullets": [f"【高品質素材】 {b} を強化した耐久設計" for b in bullets],
-                        "description": f"この製品は高品質の素材で作られており、非常に耐久性があります。 {description}"
+                        "title": f"[NEW] {title} - Premium Grade",
+                        "bullets": [f"[Premium Material] {b} - Built for lasting durability" for b in bullets],
+                        "description": f" {description}"
                     })
                 elif lang.lower() == "de":
                     results.append({
