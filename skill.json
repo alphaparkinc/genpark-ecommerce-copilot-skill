@@ -1,17 +1,24 @@
 {
   "name": "ecommerce-copilot-skill",
-  "description": "AI-powered catalog enrichment agent designed for cross-border e-commerce visual assets generation (model try-on, scene swapping) and listing translation/optimization.",
+  "description": "GenPark AI Agent Skill - AI-powered catalog enrichment agent designed for cross-border e-commerce visual assets generation (model try-on, scene swapping) and listing translation/optimization.",
   "version": "1.0.0",
-  "author": "alphaparkinc",
+  "author": "genpark",
   "inputs": {
     "product_images": {
       "type": "array",
       "description": "List of source product image URLs (flat layout or mannequin models).",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "visual_task": {
       "type": "string",
-      "enum": ["model_tryon", "scene_swap", "resolution_upscale", "background_removal"],
+      "enum": [
+        "model_tryon",
+        "scene_swap",
+        "resolution_upscale",
+        "background_removal"
+      ],
       "description": "The AI visual enhancement task to perform."
     },
     "target_demographics": {
@@ -22,15 +29,26 @@
       "type": "object",
       "description": "The original product title, bullet points, and description.",
       "properties": {
-        "title": { "type": "string" },
-        "bullets": { "type": "array", "items": { "type": "string" } },
-        "description": { "type": "string" }
+        "title": {
+          "type": "string"
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        }
       }
     },
     "target_languages": {
       "type": "array",
       "description": "Target languages to translate and optimize the copy for.",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     }
   },
   "outputs": {
@@ -38,19 +56,36 @@
       "type": "array",
       "description": "List of generated image assets with model and background applied.",
       "items": {
-        "source_image": { "type": "string" },
-        "modified_image": { "type": "string" },
-        "type": { "type": "string" }
+        "source_image": {
+          "type": "string"
+        },
+        "modified_image": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
       }
     },
     "optimized_listings": {
       "type": "array",
       "description": "Optimized, localized listing copies for target markets.",
       "items": {
-        "language": { "type": "string" },
-        "title": { "type": "string" },
-        "bullets": { "type": "array", "items": { "type": "string" } },
-        "description": { "type": "string" }
+        "language": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        }
       }
     }
   },
