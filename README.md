@@ -1,4 +1,4 @@
-# ecommerce-copilot-skill
+# genpark-ecommerce-copilot-skill
 
 > **GenPark AI Agent Skill** -- # E-Commerce Visuals & Catalog Enrichment Copilot Skill
 
