@@ -1,4 +1,6 @@
-# E-Commerce Visuals & Catalog Enrichment Copilot Skill
+# ecommerce-copilot-skill
+
+> **GenPark AI Agent Skill** -- # E-Commerce Visuals & Catalog Enrichment Copilot Skill
 
 This repository contains the **E-Commerce Visuals & Catalog Enrichment Copilot Skill** — a modular developer Python client SDK wrapper, agent skill definition, and runnable example workflows designed to automate the generation of high-quality product images, model try-on visual changes, background scene adjustments, and localized catalog SEO copywriting translation.
 
